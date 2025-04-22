@@ -1,19 +1,96 @@
-<!DOCTYPE HTML>
-<html>
+<!DOCTYPE html>
+<html lang="ko">
 <head>
- <title>표준프레임워크 경량환경 홈페이지 템플릿</title>
- <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Facebook Style</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
+    body { background: #f0f2f5; }
+    .navbar {
+      background: #4267B2;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      color: white;
+      justify-content: space-between;
+    }
+    .navbar .logo { font-weight: bold; font-size: 24px; }
+    .navbar .search input {
+      padding: 5px 10px;
+      border-radius: 20px;
+      border: none;
+      outline: none;
+    }
+    .container {
+      display: flex;
+      margin-top: 20px;
+      padding: 0 20px;
+      gap: 20px;
+    }
+    .sidebar, .feed, .rightbar {
+      background: white;
+      border-radius: 8px;
+      padding: 20px;
+    }
+    .sidebar { flex: 1; }
+    .feed { flex: 2; }
+    .rightbar { flex: 1; }
+    .menu-item { margin-bottom: 15px; font-size: 18px; cursor: pointer; }
+    .post {
+      background: #fff;
+      border-radius: 8px;
+      padding: 15px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .post h3 { margin-bottom: 10px; }
+    .post p { color: #555; }
+    .post img { width: 100%; margin-top: 10px; border-radius: 8px; }
+    .friend-suggestion {
+      margin-bottom: 15px;
+      font-size: 16px;
+      color: #333;
+    }
+  </style>
 </head>
 <body>
-  <h3>경량환경 홈페이지 템플릿 구동 성공</h3>
-	<p>
-		<a href="https://github.com/eGovFramework/egovframe-template-simple-react">egovframe-template-simple-react</a>을 구동하세요
-	</p>
-	<p>
-	application.properties에 정의되어 있는 암호화서비스 알고리즘 키(Globals.crypto.algoritm) 및 <br />JWT secret 키(Globals.jwt.secret) 값을 반드시 기본값에서 변경하여 사용하시기 바랍니다
-	</p>
-	<p>
-	기타 자세한 사항은 README.md 참고
-	</p>
+
+  <div class="navbar">
+    <div class="logo">MyFace</div>
+    <div class="search">
+      <input type="text" placeholder="페이스북 검색">
+    </div>
+    <div class="menu">
+      홈 | 프로필 | 메세지
+    </div>
+  </div>
+
+  <div class="container">
+
+    <div class="sidebar">
+      <div class="menu-item">친구</div>
+      <div class="menu-item">그룹</div>
+      <div class="menu-item">저장됨</div>
+      <div class="menu-item">마켓플레이스</div>
+    </div>
+
+    <div class="feed">
+      <div class="post">
+        <h3>김철수</h3>
+        <p>오늘은 날씨가 너무 좋아요 ☀️</p>
+        <img src="data:image/jpeg;base64,/9j/4AAQSk...중략.../2Q==" alt="김철수의 포스트 이미지">
+      </div>
+    </div>
+
+    <div class="rightbar">
+      <div class="friend-suggestion">알 수도 있는 사람</div>
+      <div class="friend-suggestion">이민수</div>
+      <div class="friend-suggestion">박지현</div>
+      <div class="friend-suggestion">최준호</div>
+    </div>
+
+  </div>
+
 </body>
 </html>
